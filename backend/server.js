@@ -17,7 +17,7 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
+app.use(cors()); // Allow all origins for the test project
 app.use(express.json());
 app.use(morgan("dev"));
 
@@ -25,11 +25,19 @@ app.get("/", (req, res) => {
   res.json({ message: "Issue Tracker API is running" });
 });
 
+// Mount routes with /api prefix
 app.use("/api/auth", authRoutes);
 app.use("/api/issues", issueRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/users", userRoutes);
+
+// Mount routes without /api prefix (Fallback for misconfigured frontends)
+app.use("/auth", authRoutes);
+app.use("/issues", issueRoutes);
+app.use("/comments", commentRoutes);
+app.use("/dashboard", dashboardRoutes);
+app.use("/users", userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -2,8 +2,8 @@
 
 A full-stack MERN application for tracking issues within a team. This platform enables users to register, log in, create and manage issues, assign them to team members, track statuses, leave comments, and view an at-a-glance dashboard.
 
-**Live Demo (Frontend):** `<ADD YOUR DEPLOYED FRONTEND URL HERE>`
-**API Base URL (Backend):** `<ADD YOUR DEPLOYED BACKEND URL HERE>`
+**Live Demo (Frontend):** `https://issue-tracker-lyart-rho.vercel.app`
+**API Base URL (Backend):** `https://issue-tracker-uwgv.onrender.com/api`
 
 ---
 
